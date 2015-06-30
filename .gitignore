@@ -1,0 +1,9 @@
+node_modules/
+dist/
+_prototype/node_modules
+_prototype/bower_components
+_prototype/dist
+.sass-cache
+.DS_Store
+.sftp-config.json
+bower_components/

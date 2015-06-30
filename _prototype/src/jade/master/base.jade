@@ -1,0 +1,53 @@
+// .___            .___              
+// |   | ____    __| _/____   ____   
+// |   |/    \  / __ |/ __ \_/ __ \  
+// |   |   |  \/ /_/ \  ___/\  ___/  
+// |___|___|  /\____ |\___  >\___  > 
+//          \/      \/    \/     \/  
+// ------- Creative Disruption ------
+
+
+html
+	head
+		title Coacting Styles
+		include ../includes/styles
+		
+	body
+		header#header
+			.topBar
+				a.logo
+					img(src="./img/logo.png", alt="")
+				.social
+					a(href="")
+						i.fa.fa-facebook.social__link
+					a(href="")
+						i.fa.fa-twitter.social__link
+					a(href="")
+						i.fa.fa-linkedin.social__link
+					a(href="")
+						i.fa.fa-google-plus.social__link
+			.landing.centered
+
+				.centered__inner
+					h1.textCenter 
+						span Co
+						| acting Styles
+					p.textCenter A new self coaching approach to relationships at work.
+					.btnRow
+						a(href="").bigBtn Learn More
+						a(href="").bigBtn Buy Now
+					form.formSingle
+						input.formSingle__input(type="email" placeholder="Register your interest")
+						button.formSingle__button
+							i.fa.fa-paper-plane
+			include ../includes/header
+			.midBar
+				block header 
+
+		main#main
+			block content 
+
+		footer#footer
+			include ../includes/footer
+
+		include ../includes/scripts
