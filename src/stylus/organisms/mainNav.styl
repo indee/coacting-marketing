@@ -1,0 +1,48 @@
+.mainNav
+	background #303030
+	display flex
+	justify-content space-between
+	padding 0 1em
+	&__item
+		position relative
+		&:hover
+			color white
+			.mainNav
+				&__dropDown
+					top 40px
+					z-index 999
+					opacity 1
+		&__link
+			padding 1em
+			color white
+			&--action
+				background color1
+	&__group
+		display flex
+		align-items center
+		list-style-type none
+		padding 0
+	&__dropDown
+		display flex
+		align-items center
+		flex-direction column
+		position absolute
+		list-style-type none
+		top -50px
+		width 200px
+		z-index -100
+		opacity 0
+		transition all 0.3s
+		&__item
+			display flex
+			width 100%
+			&__link
+				width 100%
+				text-align center
+				background #303030
+			
+	&__logo
+		margin 0
+		margin-right 1em
+		max-width 70px
+		

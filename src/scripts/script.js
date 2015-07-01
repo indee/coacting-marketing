@@ -1,3 +1,5 @@
 jQuery(document).ready(function( $ ) {
-	// Your jQuery Here
+	$(".vc_row").each(function(){
+		$(this).find(".wpb_column").wrapAll("<div class='vcInner'></div>");
+	});
 });

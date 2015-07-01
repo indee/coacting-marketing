@@ -1,0 +1,32 @@
+<nav class="mainNav">
+	<ul class="mainNav__group">
+		<li class="mainNav__item">
+			<a href="" class="mainNav__item__link">
+				<img class="mainNav__logo" src="{{theme.asset.img}}/logo.png" alt=""/>
+			</a>
+		</li>
+		{% for item in menu.get_items %}
+			<li class="mainNav__item">
+				<a href="{{item.get_link}}" class="mainNav__item__link">{{item.title}}</a>
+				{% if item.get_children %}
+					<ul class="mainNav__group mainNav__dropDown">
+			  			{% for child in item.get_children %}
+							<li class="mainNav__item mainNav__dropDown__item">
+								<a href="{{child.get_link}}" class="mainNav__item__link mainNav__dropDown__item__link">{{child.title}}</a>
+							</li>
+			  			{% endfor %}
+					</ul>
+		 		{% endif %}
+			</li>
+		{% endfor %}
+	</ul>
+
+
+	<ul class="mainNav__group">
+		<li class="mainNav__item">
+			<a href="30words.coacting.co.uk" class="mainNav__item__link mainNav__item__link--action">Login</a>
+		</li>
+	</ul>
+</nav>
+
+

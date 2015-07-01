@@ -8,5 +8,12 @@
 	require_once('functions/actions.func.php');
 	require_once('functions/globals.func.php');
 
-
-
+	// Timber Vars
+	$themeGlobals = array(
+		'url' => (string)get_bloginfo('template_directory'),
+		'asset' => array(
+			'img' => (string)get_bloginfo('template_directory')."/dist/img",
+			'css' => (string)get_bloginfo('template_directory')."/dist/css",
+			'js' => (string)get_bloginfo('template_directory')."/dist/js"
+		)
+	);
