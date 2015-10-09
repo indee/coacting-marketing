@@ -1,0 +1,194 @@
+/*
+| Navigation
+*/
+.nav {
+  @extend .object-wrapper;
+  @extend .utility-shadow;
+  margin-bottom:$gap;
+  &-logo {
+    max-width:64px;
+    margin-right:$gap;
+    &-img {}
+  }
+  &-group {
+    width:100%;
+  }
+  &-item {
+    margin:0 5px;
+    position:relative;
+    &:hover {
+      ul.dropdown {
+        display:flex;
+        opacity:1;
+        top:50px;
+        left:0;
+      }
+    }
+  }
+}
+
+.dropdown {
+  @extend .object-list;
+  display:none;
+  position:absolute;
+  padding:5px;
+  transition:all 0.3s;
+  transition-delay:0.3s;
+  opacity:0;
+  &:hover {
+    display:flex;
+    opacity:1;
+    top:50px;
+    left:0;
+  }
+  &-item {
+    margin:0;
+    width: 100%;
+  }
+  &-link {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .nav {
+    width:100%;
+    &-group {
+      flex-direction:column;
+      max-width:300px;
+      margin:0 auto;
+    }
+    &-item {
+      justify-content:center;
+      width:100%;
+      &:hover {
+        ul.dropdown {
+          top:0;
+        }
+      }
+    }
+    &-link {
+      text-align:center;
+      justify-content:center;
+      padding:$gap;
+      width:100%;
+    }
+    &-logo {
+      margin:$gap 0;
+    }
+  }
+  .dropdown {
+    display:flex;
+    opacity: 1;
+    position:relative;
+    top:0;
+    width:100%;
+    .nav-item {
+      background:$dk-color1;
+    }
+    &-item {
+      width:100%;
+    }
+    &-link {
+      width:100%;
+    }
+  }
+}
+
+
+/*
+| Hero
+*/
+.hero {
+  &-image {
+    margin:30px 0;
+  }
+}
+
+
+/*
+| Social
+*/
+.social {
+  padding:$gap;
+  display:flex;
+  align-items:center;
+  &-link {
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    padding:$gap;
+    height:70px;
+    width:70px;
+  }
+  &-logo {
+    background:none;
+    height:150px;
+    width:150px;
+  }
+}
+@media screen and (max-width:767px) {
+  .social {
+    flex-direction: column;
+  }
+}
+
+/*
+| Content
+*/
+.content {
+  max-width:1000px;
+  margin:0 auto;
+}
+
+
+/*
+| Button
+*/
+.button {
+  @extend .object-button;
+  margin:$gap 0;
+  &-small {
+    width:50%;
+    margin:5px;
+  }
+  &-row {
+    width:300px;
+    margin:$gap 0;
+    display:flex;
+  }
+}
+
+
+/*
+| Footer
+*/
+.footer {
+  @extend .object-wrapper;
+  flex-direction:column;
+  padding:$gap;
+  &-logo {
+    max-width:100px;
+  }
+  &-bottom {
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    p {
+      margin: 0;
+      a {}
+    }
+  }
+}
+
+@media screen and (max-width:767px) {
+  .footer {
+    &-bottom {
+      flex-direction: column;
+      p {
+        width:100%;
+        text-align: center;
+      }
+    }
+  }
+}

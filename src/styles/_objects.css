@@ -1,0 +1,26 @@
+/*
+| Navigation
+*/
+
+.object-wrapper {
+  display:flex;
+  padding:$gap;
+  align-items:center;
+}
+
+.object-list {
+  display:flex;
+  flex-direction:column;
+}
+
+.object-button {
+  display:flex;
+  padding:$gap;
+  width:100%;
+  text-align:center;
+  justify-content: center;
+  align-items:center;
+  i.fa {
+    margin-right:$gap;
+  }
+}

@@ -1,15 +1,8 @@
 {% extends "master/base.twig" %}
 {% block content %}
-	<div class="midBar">
-		<div class="wrapper wrapper--column">
-			<h2 class="textCenter strong">{{post.title}}</h2>
-		</div>
-	</div>
 	{% for post in posts %}
-		<div class="vcWrapper">
+		<article class="content">
 			{{post.content}}
-		</div>
-	{% else %}
-		<li>Sorry, Page is empty</li>
+		</article>
 	{% endfor %}
 {% endblock %}

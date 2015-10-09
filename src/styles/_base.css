@@ -1,0 +1,56 @@
+/*
+| Globals
+*/
+
+html,body {
+  padding:0;
+  margin:0;
+}
+
+* {
+  box-sizing:border-box;
+  &:focus {
+    outline:none;
+  }
+}
+
+/*
+| Typography
+*/
+
+body {
+  font-weight:100;
+  font-size:responsive;
+  font-family:"proxima-nova" sans-serif;
+}
+
+/*
+| Tags
+*/
+
+img {
+  width:100%;
+  display:flex;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display:flex;
+  justify-content: flex-start;
+  li {
+    display:flex;
+    padding: 0;
+    margin: 0;
+    a {
+      display:flex;
+      align-items:center;
+    }
+  }
+}
+
+
+a {
+  text-decoration: none;
+}

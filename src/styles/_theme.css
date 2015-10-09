@@ -1,0 +1,131 @@
+$color1:#7e9fd1;
+$dk-color1:color($color1 lightness(50%));
+$lg-color1:color($color1 lightness(75%));
+
+$color2:#fbbc7a;
+$dk-color2:color($color2 lightness(50%));
+$lg-color2:color($color2 lightness(75%));
+
+$color3:#f18569;
+$dk-color3:color($color3 lightness(50%));
+$lg-color3:color($color3 lightness(75%));
+
+$color4:#9e9fa1;
+$dk-color4:color($color4 lightness(50%));
+$lg-color4:color($color4 lightness(75%));
+
+
+
+$gap:15px;
+
+.nav {
+  background:$color1;
+  &-group {}
+  &-link {
+    color:white;
+    font-weight:300;
+    transition:all 0.3s;
+    padding:$gap;
+    &:hover {
+      background:color($color1 lightness(50%));
+    }
+  }
+}
+
+.dropdown {
+  background:$color1;
+}
+
+.footer {
+  background:$color1;
+  &-bottom {
+    p {
+      color:white;
+      a {
+        color:white;
+        font-weight:900;
+      }
+    }
+  }
+}
+
+
+.social {
+  &-link {
+    color:white;
+    background:url('../img/cogs/cog12-3.png');
+    background-repeat:no-repeat;
+    background-size:100%;
+    color:$color2;
+    transition:all 0.3s;
+    &:hover {
+      color:white;
+    }
+  }
+}
+
+.button {
+  background:$color2;
+  color:white;
+}
+
+
+/*
+| Formidible Overrides
+*/
+
+form.frm-show-form  {
+  .frm_form_fields {
+    fieldset {
+      input, textarea {
+        border:none!important;
+        border-radius: 0!important;
+        border-bottom:3px solid $color1!important;
+        box-shadow:none!important;
+      }
+      .frm_submit {
+        display:flex;
+        input[type="submit"] {
+          background:$color1!important;
+          color:white!important;
+          padding:$gap 75px!important;
+        }
+      }
+    }
+  }
+}
+
+
+
+/*
+| Visual Composer Overrides
+*/
+
+.vc_row {
+  padding:100px 0;
+}
+
+@media screen and (max-width:767px) {
+  .vc_row {
+    padding:0;
+  }
+}
+/*
+| Ultimate Addons Overrides
+*/
+div.ult_pricing_table  {
+  font-size: responsive;
+  .ult_pricing_heading {
+    h3 {
+      font-weight: 700!important;
+    }
+    h5, h3 {
+      font-size: responsive;
+    }
+  }
+  .ult-just-icon-wrapper {
+    i {
+      font-size:45px;
+    }
+  }
+}
