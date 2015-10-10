@@ -119,13 +119,6 @@ gulp.task('videos', function () {
 // Image Task
 gulp.task('images', function () {
 	return gulp.src(paths.app.images + '/**/*')
-		.pipe(imagemin(
-			{
-				progressive: true,
-				svgoPlugins: [{removeViewBox: false}],
-				use: [pngquant()]
-			}
-		))
 		.pipe(gulp.dest(paths.dist.images))
 		// Reload Page
 		.pipe(livereload());
