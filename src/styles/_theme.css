@@ -1,26 +1,17 @@
-$color1:#7e9fd1;
-$dk-color1:color($color1 lightness(50%));
-$lg-color1:color($color1 lightness(75%));
+/*
+| ID's
 
-$color2:#fbbc7a;
-$dk-color2:color($color2 lightness(50%));
-$lg-color2:color($color2 lightness(75%));
-
-$color3:#f18569;
-$dk-color3:color($color3 lightness(50%));
-$lg-color3:color($color3 lightness(75%));
-
-$color4:#9e9fa1;
-$dk-color4:color($color4 lightness(50%));
-$lg-color4:color($color4 lightness(75%));
-
-
-
-$gap:15px;
+*/
+#landingImage {
+  max-width:700px;
+  margin:0 auto;
+}
 
 .nav {
   background:$color1;
-  &-group {}
+  &-group {
+    background:$color1;
+  }
   &-link {
     color:white;
     font-weight:300;
@@ -28,6 +19,18 @@ $gap:15px;
     padding:$gap;
     &:hover {
       background:color($color1 lightness(50%));
+    }
+  }
+  &-mobile {
+    background:$color1;
+    &-navicon {
+      color:white;
+    }
+    &-close {
+      color:white;
+      font-size:1.5rem;
+      top:$gap;
+      left:$gap;
     }
   }
 }
@@ -61,6 +64,9 @@ $gap:15px;
     &:hover {
       color:white;
     }
+  }
+  &-logo {
+    background:none;
   }
 }
 

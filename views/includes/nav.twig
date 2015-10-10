@@ -1,6 +1,10 @@
 <nav id="mainNavigation" class="nav">
+	<div class="nav-mobile">
+		<a href="#" id="nav-mobile-navicon" class="fa fa-navicon nav-mobile-navicon"></a>
+	</div>
 
-	<ul class="nav-group">
+	<ul class="nav-group animated">
+		<a href="#" id="nav-mobile-close" class="fa fa-close nav-mobile-close" class="fa fa-close"></a>
 		<li class="nav-item">
 			<a href="/" class="nav-link">Home</a>
 		</li>
@@ -9,6 +13,8 @@
 			<li class="nav-item">
 				<a href="{{item.get_link}}" class="nav-link">{{item.title}}</a>
 				{% if item.get_children %}
+					<a class="nav-mobile-nextLevel fa fa-angle-double-right"></i>
+
 					<ul class="dropdown">
 			  			{% for child in item.get_children %}
 							<li class="nav-item dropdown-item">
@@ -19,10 +25,11 @@
 		 		{% endif %}
 			</li>
 		{% endfor %}
+
 		<li class="nav-item utility-flexRight">
 			<a href="30words.coacting.co.uk" class="nav-link">Login</a>
 		</li>
-
+		{% include 'includes/social.twig' %}
 	</ul>
 
 </nav>

@@ -1,4 +1,6 @@
-@import "theme";
+@import "bower_components/animate.css/animate.css";
+
+@import "vars";
 @import "utils";
 
 @import "base";
@@ -6,3 +8,4 @@
 @import "components";
 
 @import "shame";
+@import "theme";
