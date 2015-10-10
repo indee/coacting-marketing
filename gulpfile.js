@@ -14,7 +14,7 @@ var concat = require('gulp-concat');
 var livereload = require('gulp-livereload');
 
 // Post CSS Awesomeness
-var postCSS = require('gulp-postCSS');
+var postCSS = require('gulp-postcss');
 
 var css_proc = [
 	require('precss'),
