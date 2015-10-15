@@ -54,3 +54,16 @@ ul {
 a {
   text-decoration: none;
 }
+
+.content {
+  ul,ol {
+    flex-direction: column;
+    padding-left:10px;
+  }
+  ul {
+    list-style-type: circle;
+  }
+  ul {
+    list-style-type: upper-roman;
+  }
+}
