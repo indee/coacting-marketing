@@ -6,7 +6,7 @@ ENV THEME_NAME coacting-marketing
 
 WORKDIR /app/wp-content/themes/${THEME_NAME}
 
-ADD package.json
+ADD package.json .
 RUN npm install
 
 ADD . .
