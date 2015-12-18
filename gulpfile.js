@@ -33,7 +33,7 @@ var css_proc = [
 // Global Pathing
 var globals = {
 	// Working Directory
-	dev: 'src',
+	dev: 'assets',
 	// Compiled Code
 	prod: 'dist'
 };
