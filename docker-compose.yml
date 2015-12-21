@@ -1,0 +1,16 @@
+coacting-marketing-db:
+  image: 'tutum/mysql:5.5'
+  environment:
+    - MYSQL_PASS=test
+coacting-marketing-wp:
+  image: 'indee/coacting-marketing:latest'
+  environment:
+    - DB_NAME=wordpress
+    - DB_PASS=test
+    - DB_USER=admin
+  links:
+    - 'coacting-marketing-db:db'
+  ports:
+    - '8734:80'
+  volumes:
+    - '.:/app/wp-content/themes/coacting-marketing'

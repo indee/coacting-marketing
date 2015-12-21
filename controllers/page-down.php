@@ -1,6 +1,6 @@
 <?php
 	/*
-		Template Name: Blog Template
+		Template Name: Down Time Template
 	*/
 
 
@@ -10,7 +10,9 @@
 	$ctx = Timber::get_context();
 	// Add to the array
 	$ctx["post"] = Timber::get_post();
+	$ctx["theme"] = $themeGlobals;
 	// Render a view
-	Timber::render('blog.twig', $ctx);
+	Timber::render('down.twig', $ctx);
 	// Get the footer content
 	get_footer();
+
