@@ -6,4 +6,5 @@ _prototype/dist
 .sass-cache
 .DS_Store
 .sftp-config.json
+.*.sw*
 bower_components/

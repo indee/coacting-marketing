@@ -1,6 +1,6 @@
 FROM indee/wordpress:latest
 
-ENV THEME_NAME coacting-marketing
+ENV THEME_NAME name
 
 RUN mkdir /app/wp-content/themes/${THEME_NAME}
 WORKDIR /app/wp-content/themes/${THEME_NAME}
