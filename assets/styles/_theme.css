@@ -1,137 +1,153 @@
-/*
-| ID's
-
-*/
-#landingImage {
-  max-width:700px;
-  margin:0 auto;
-}
-
-.nav {
-  background:$color1;
-  &-group {
-    background:$color1;
-  }
-  &-link {
-    color:white;
-    font-weight:300;
-    transition:all 0.3s;
-    padding:$gap;
-    &:hover {
-      background:color($color1 lightness(50%));
+.landing {
+  background:url('../img/landing.jpg');
+  background-size:cover;
+  #landing-content {
+    h2,h3,h4,p {
+      color:#303030;
+      margin:0;
     }
-  }
-  &-mobile {
-    background:$color1;
-    &-navicon {
-      color:white;
-    }
-    &-close {
-      color:white;
-      font-size:1.5rem;
-      top:$gap;
-      left:$gap;
-    }
+    h2 {}
+    h3 {}
+    h4 {text-transform:uppercase}
+    a {margin-top:15px;}
   }
 }
 
-.dropdown {
-  background:$color1;
+
+.navbar {
+  background:transparent;
 }
 
-.footer {
-  background:$color1;
-  &-bottom {
-    p {
-      color:white;
+#navbar-coacting {
+  display:flex!important;
+  justify-content:center;
+  ul {
+    li {
       a {
         color:white;
-        font-weight:900;
+        text-align:center;
       }
     }
   }
 }
 
-
-.social {
-  &-link {
-    color:white;
-    background:url('../img/cogs/cog12-3.png');
-    background-repeat:no-repeat;
-    background-size:100%;
-    color:$color2;
-    transition:all 0.3s;
-    &:hover {
-      color:white;
+.navbar-coacting {
+  border-radius:0;
+  border:none;
+  .navbar-header {
+    .navbar-toggle {
+      background:white;
     }
   }
-  &-logo {
-    background:none;
-  }
-}
-
-.button {
-  background:$color2;
-  color:white;
-}
-
-
-/*
-| Formidible Overrides
-*/
-
-form.frm-show-form  {
-  .frm_form_fields {
-    fieldset {
-      input, textarea {
-        border:none!important;
-        border-radius: 0!important;
-        border-bottom:3px solid $color1!important;
-        box-shadow:none!important;
-      }
-      .frm_submit {
-        display:flex;
-        input[type="submit"] {
-          background:$color1!important;
-          color:white!important;
-          padding:$gap 75px!important;
+  .navbar-collapse {
+    padding-left:0;
+    padding-right:0; 
+    .navbar-nav {
+      li {
+        a {
+          color:#303030;
+          transition:all 0.3s;
+          position:relative;
+          border-bottom:2px solid transparent;
+          &:hover {
+            border-bottom:2px solid white;
+          }
         }
       }
     }
   }
 }
 
-
-
-/*
-| Visual Composer Overrides
-*/
-
-.vc_row {
-  padding:10px 0;
+.navbar-follower {
+  background:rgba(255,255,255,0.8);
+  z-index:999;
+  border-radius:0;
+  .navbar-header {
+    .navbar-toggle {
+    }
+  }
+  .navbar-collapse {
+    .navbar-nav {
+      li {
+        a {
+          text-transform:uppercase;
+          font-weight:500;
+          font-size:0.65rem;
+          &:hover {
+          }
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width:767px) {
-  .vc_row {
-    padding:0;
+  .navbar-coacting {
+    .navbar-header {
+      .navbar-collapse {
+        padding-left:15px;
+        padding-right:15px; 
+      }
+      .navbar-nav {
+        margin-top:15px;
+        margin-bottom:15px;
+      }
+    }
   }
 }
-/*
-| Ultimate Addons Overrides
-*/
-div.ult_pricing_table  {
-  font-size: responsive;
-  .ult_pricing_heading {
-    h3 {
-      font-weight: 700!important;
-    }
-    h5, h3 {
-      font-size: responsive;
+
+.page-section {
+  position:relative;
+  overflow:hidden;
+  &:after {
+    width:100%;
+    margin:15px auto;
+    height:1px;
+    background:#eee;
+    content:"";
+    display:block;
+  }
+}
+
+.footer {
+  background:$pallet1;
+  padding:15px;
+  display:flex;
+  justify-content:center;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  a {
+    color:white;
+  }
+  .social {
+    margin:15px 0;
+  }
+  .footer-logo {
+    max-width:100px;
+    width:100%;
+  }
+}
+
+.btn {
+  &-coacting {
+    background:$pallet1!important;
+    border:none;
+    border-radius:;
+  }
+  &-center {
+    margin: 0 auto 45px auto;
+    display: block;
+    max-width: 300px;
+    width:100%;
+    &:hover {
+      background:white;
     }
   }
-  .ult-just-icon-wrapper {
-    i {
-      font-size:45px;
-    }
-  }
+}
+
+
+
+.container {
+  max-width:1000px;
 }

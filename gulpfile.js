@@ -3,13 +3,11 @@
 // ------------------------------------------- //
 	// Node Packages
 var gulp = require('gulp');
-var pngquant = require('imagemin-pngquant');
 
 	// Gulp Packages
 // var util = require('gulp-util');
 var sourcemap = require('gulp-sourcemaps');
 var rename = require('gulp-rename');
-var imagemin = require('gulp-imagemin');
 var concat = require('gulp-concat');
 var livereload = require('gulp-livereload');
 

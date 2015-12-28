@@ -11,6 +11,6 @@ coacting-marketing-wp:
   links:
     - 'coacting-marketing-db:db'
   ports:
-    - '8734:80'
+    - '8999:80'
   volumes:
     - '.:/app/wp-content/themes/coacting-marketing'

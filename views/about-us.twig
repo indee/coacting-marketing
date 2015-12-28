@@ -1,0 +1,16 @@
+{% extends "master/base.twig" %}
+{% block content %}
+  <div class="container">
+    {% for item in post.get_field('members') %}
+      <section class="page-section row content">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <h2>{{item.name}}</h2>
+          {{item.profile_picture.src}}
+          {{item.bio}}
+        </div>
+        <div class="col-md-2"></div>
+      </section>
+    {% endfor %}
+  </div>
+{% endblock %}

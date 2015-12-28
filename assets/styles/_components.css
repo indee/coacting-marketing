@@ -1,244 +1,50 @@
-/*
-| Navigation
-*/
-.nav {
-  @extend .object-wrapper;
-  @extend .utility-shadow;
-  margin-bottom:$gap;
-  &-group {
-    width:100%;
-    .social {
-      display:none;
-    }
-    &-isOpen {
-      display:flex;
-    }
-  }
-  &-item {
-    margin:0 5px;
-    position:relative;
-    &:hover {
-      ul.dropdown {
-        display:flex;
-        opacity:1;
-        top:50px;
-        left:0;
-      }
-    }
-  }
-  &-mobile {
-    display:none;
-    width:100%;
-    &-navicon {
-      display:none;
-      height:50px;
-      display:flex;
-      z-index:300;
-      align-items:center;
-      justify-content: center;
-    }
-    &-close {
-      display:none;
-    }
-    &-nextLevel {
-      display:none;
-    }
-  }
-}
-
-.dropdown {
-  @extend .object-list;
-  display:none;
-  position:absolute;
-  padding:5px;
-  transition:all 0.3s;
-  z-index:200;
-  transition-delay:0.3s;
-  opacity:0;
-  &:hover {
-    display:flex;
-    opacity:1;
-    top:50px;
-    left:0;
-  }
-  &-item {
-    margin:0;
-    width: 100%;
-  }
-  &-link {
-    width: 100%;
-  }
-}
-
-@media screen and (max-width:767px) {
-  .nav {
-    flex-direction: column;
-    justify-content: space-between;
-    height:50px;
-    overflow:hidden;
-    padding:0;
-    &-link {
-      display:flex;
-      align-items: center;
-      font-size:responsive;
-      font-range: 12px 20px;
-    }
-    &-item {
-      align-items: center;
-      a.fa {
-        margin-left:5px;
-        position: relative;
-        top:2px;
-        background-color: $lg-color1;
-        border-radius: 5px;
-        height:30px;
-        width:30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color:white;
-      }
-    }
-    &-mobile {
-      display: flex;
-      flex-direction: row-reverse;
-      &-navicon {
-        margin: 0 $gap;
-      }
-      &-close {
-        position:fixed;
-        top:0;
-        left:0;
-        display:flex;
-        z-index:200;
-      }
-      &-logo {
-        max-width:80px;
-        position: fixed;
-        top:$gap;
-        left:calc(50% - 40px);
-      }
-    }
-    &-group {
-      position:fixed;
-      top:0;
-      left:0;
-      height:100%;
-      width:100%;
-      z-index:100;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      opacity: 0;
-      .social {
-        flex-direction: row;
-        flex-wrap: wrap;
-        display:flex;
-        justify-content: center;
-        &-logo {
-          display:none;
-        }
-        &-isOpen {
-
-        }
-      }
-    }
-  }
-}
-
-
-/*
-| Hero
-*/
-.hero {
-  &-image {
-    margin:30px 0;
-  }
-}
-
-
-/*
-| Social
-*/
-.social {
-  padding:$gap;
+header#header {
+  height:500px;
   display:flex;
-  align-items:center;
-  &-link {
+  flex-direction:column;
+  .container {
+    height:100%;
     display:flex;
-    justify-content: center;
     align-items:center;
-    padding:$gap;
-    height:70px;
-    width:70px;
   }
-  &-logo {
+  #landing-content {
+    max-width:400px;
+  }
+}
+
+.social {
+  a {
+    font-size:2rem;
+  }
+}
+
+
+.hero-button {
+  padding:15px 30px;
+  margin-top:15px;
+}
+
+
+.card {
+  text-align:center;
+  margin:50px 0;
+  &-stat {
     height:150px;
     width:150px;
-  }
-}
-@media screen and (max-width:767px) {
-  .social {
-    flex-direction: column;
-  }
-}
-
-/*
- | Content
-*/
-.content {
-  max-width:1000px;
-  margin:0 auto;
-}
-
-
-/*
-| Button
-*/
-.button {
-  @extend .object-button;
-  margin:$gap 0;
-  &-small {
-    width:50%;
-    margin:5px;
-  }
-  &-row {
-    width:300px;
-    margin:$gap 0;
     display:flex;
-  }
-}
+    margin:0 auto 15px auto;
+    background:#eee;
+    padding:5px;
+    align-items:center;
+    justify-content:center;
+    font-size:3rem;
+    border-radius:50%;
 
-
-/*
-| Footer
-*/
-.footer {
-  @extend .object-wrapper;
-  flex-direction:column;
-  padding:$gap;
-  &-logo {
-    max-width:100px;
   }
-  &-bottom {
-    width:100%;
-    display: flex;
-    justify-content: space-between;
-    p {
-      margin: 0;
-      a {}
-    }
+  i {
+    font-size:5rem;
+    margin-bottom:15px;
+    color:$pallet1;
   }
-}
-
-@media screen and (max-width:767px) {
-  .footer {
-    &-bottom {
-      flex-direction: column;
-      p {
-        width:100%;
-        text-align: center;
-      }
-    }
-  }
+  p {margin:0;}
 }

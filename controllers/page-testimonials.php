@@ -1,6 +1,6 @@
 <?php
 	/*
-		Template Name: Home Template
+		Template Name: Testimonials Template
 	*/
 
 
@@ -13,6 +13,8 @@
   $ctx["reviews"] = Timber::get_posts("post_type='testimonials'");
   $ctx["theme"] = $themeGlobals;
 	// Render a view
-	Timber::render('home.twig', $ctx);
+	Timber::render('testimonials.twig', $ctx);
 	// Get the footer content
 	get_footer();
+
+
