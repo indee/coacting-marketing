@@ -1,16 +1,17 @@
 FROM indee/wordpress:latest
 
-ENV THEME_NAME name
+ENV THEME_NAME coacting-marketing
 
-RUN mkdir /app/wp-content/themes/${THEME_NAME}
+RUN mkdir ${THEME_NAME}
 WORKDIR /app/wp-content/themes/${THEME_NAME}
 
-ADD package.json ./
+# Add Install node modules and bower components
+ADD package.json
 RUN npm install
 
+# Add theme files
 ADD . .
 
+# Build
 RUN gulp build \
     && rm -rf ./node_modules
-
-WORKDIR /app
