@@ -30,7 +30,7 @@
     p {
       margin:0;
       text-align:center;
-      
+
       &:before, &:after {
         font-family:"FontAwesome";
         padding:15px;
@@ -39,11 +39,11 @@
         top:5px;
         color:$pallet1;
       }
-      
+
       &:before {
         content:"\f10d";
       }
-      
+
       &:after {
         content:"\f10e";
       }
@@ -60,4 +60,25 @@
 
 .co {
   color:$pallet2;
+}
+
+
+
+#footerNavigation {
+  margin-bottom:15px;
+  a {
+    margin:15px;
+    &:hover{text-decoration:none}
+  }
+}
+
+
+@media screen and (max-width:767px) {
+  #footerNavigation {
+    width:150px;
+    display:flex;
+    flex-direction:column;
+    a {
+    }
+  }
 }

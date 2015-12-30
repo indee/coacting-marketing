@@ -1,53 +1,23 @@
 <footer class="footer">
 
   {% include 'includes/social.twig' %}
-  
-  <nav class="navbar navbar-default navbar-coacting">
-    <div class="mainWrap">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <div id="navbar-coacting" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            {% for item in menu.get_items %}
-              {% if item.get_children %}
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{item.title}} <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    {% for child in item.get_children %}
-                      <li>
-                        <a href="{{child.get_link}}">{{child.title}}</a>
-                      </li>
-                    {% endfor %}
-                  </ul>
-                </li>
-              {% else %}
-                <li>
-                  <a href="{{item.get_link}}">{{item.title}}</a>
-                </li>
-              {% endif %}
-            {% endfor %}
-          </ul>
-        </div>
-      </div>
-    </div>
+  <nav id="footerNavigation">
+    {% for item in menu.get_items %}
+      <a href="{{item.get_link}}">{{item.title}}</a>
+    {% endfor %}
   </nav>
-  
+
+
   
 	<div class="footer-bottom">
 		<p>
-			Copyright &copy; 
-      <span id="copyrightDate"></span> 
+			Copyright &copy;
+      <span id="copyrightDate"></span>
       <a target="_blank" href="http://www.peopleintelligence.com/">Successful People Intelligence</a>
       |
-			Made with 
-      <i class="fa fa-heart"></i> 
-      by 
+			Made with
+      <i class="fa fa-heart"></i>
+      by
       <a href="http://indee.io" target="_blank">Indee</a>
 		</p>
 	</div>
