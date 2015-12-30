@@ -48,3 +48,11 @@ header#header {
   }
   p {margin:0;}
 }
+
+
+
+.content {
+  max-width:900px;
+  margin:0 auto;
+  padding:15px;
+}
