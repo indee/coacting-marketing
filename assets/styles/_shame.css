@@ -47,14 +47,17 @@
       &:after {
         content:"\f10e";
       }
-
     }
     .testimonial-name {
 
       &:before, &:after {
         content:"";
       }
-
     }
   }
+}
+
+
+.co {
+  color:$pallet2;
 }
