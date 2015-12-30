@@ -82,3 +82,68 @@
     }
   }
 }
+
+
+
+
+.prices {
+  display:flex;
+  justify-content: center;
+  flex-wrap:wrap;
+  width:100%;
+  max-width:1000px;
+  margin:0 auto;
+}
+
+.price-item {
+  flex: 1;
+  height: 350px;
+  min-width: 250px;
+  max-width: 250px;
+  margin: 5px;
+  position: relative;
+  &.best {
+    .price-item-cover {background:$pallet3}
+  }
+  &-cover {
+    background: $pallet1;
+    height: 340px;
+    width: 210px;
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+  }
+  &-face {
+    background:#f9f9f9;
+    padding:30px 10px 10px 30px;
+    border-left:#eee 1px solid;
+    border-top:#eee 1px solid;
+    height: 280px;
+    width: 200px;
+    box-shadow: 36px 29px 135px -25px rgba(0,0,0,0.32);
+    position:absolute;
+    header {
+      h3 {
+        font-weight:700;
+        font-size:3rem;
+      }
+      &:after {
+        width:100%;
+        content:"";
+        height:2px;
+        border-radius:50%;
+        background:#eee;
+        display:block;
+        margin:15px 0;
+      }
+    }
+  }
+  a {
+    position: absolute;
+    bottom: 20px;
+    left: 45px;
+    color: #fff;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+}
