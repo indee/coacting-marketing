@@ -102,8 +102,11 @@
   max-width: 250px;
   margin: 5px;
   position: relative;
-  &.best {
+  &.theme1 {
     .price-item-cover {background:$pallet3}
+  }
+  &.theme2 {
+    .price-item-cover {background:$pallet4}
   }
   &-cover {
     background: $pallet1;
