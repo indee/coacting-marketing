@@ -187,12 +187,12 @@
   background:url('../img/paper.jpg');
   background-repeat:repeat;
   #contact {
-    background:rgba(255,255,255,0.4);
+    background:rgba(255,255,255,0.1);
     box-shadow: 10px 10px 122px -24px rgba(0,0,0,0.35);
     display:flex;
     flex-direction: column;
-    margin:100px 0 150px 150px;
-    padding-left:200px;
+    margin:20px 0 50px 0;
+    padding-left:250px;
     position:relative;
     header {
       padding-top:30px;
@@ -205,7 +205,7 @@
       padding:15px;
       height:100%;
       background:#f0ebdf;
-      width:200px;
+      width:250px;
       ul {
         list-style-type:none;
         padding:0;
