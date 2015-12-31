@@ -181,3 +181,164 @@
     text-transform: uppercase;
   }
 }
+
+
+.Contact_Us {
+  background:url('../img/paper.jpg');
+  background-repeat:repeat;
+  #contact {
+    background:rgba(255,255,255,0.4);
+    box-shadow: 10px 10px 122px -24px rgba(0,0,0,0.35);
+    display:flex;
+    flex-direction: column;
+    margin:100px 0 150px 150px;
+    padding-left:200px;
+    position:relative;
+    header {
+      padding-top:30px;
+      p {text-align: center}
+    }
+    aside {
+      position:absolute;
+      left:0;
+      top:0;
+      padding:15px;
+      height:100%;
+      background:#f0ebdf;
+      width:200px;
+      ul {
+        list-style-type:none;
+        padding:0;
+        margin:0;
+        height: 100%;
+        li {
+          display:flex;
+          flex-direction:column;
+          height:15%;
+          position:relative;
+          padding-left:30px;
+          /*background:blue;*/
+          i {
+            color:$pallet1;
+            position:absolute;
+            left:0;
+            top:10px;
+            font-size:1.4rem;
+          }
+          p {
+            margin:0;
+          }
+        }
+      }
+      #bigContact {
+        position: relative;
+        /*background:red;*/
+        height:40%;
+        p {
+          background:$pallet3;
+          position: absolute;
+          color:$pallet1;
+          font-size:3.5rem;
+          color:white;
+          text-transform:uppercase;
+          font-weight:900;
+          padding:30px 10px;
+          line-height:0.9;
+          text-align:center;
+          left:-80px;
+        }
+      }
+    }
+    form {
+      padding:30px;
+      .frm_form_field {
+        width:100%;
+        border:none;
+        display:flex;
+        input,textarea {
+          padding:15px;
+          height:auto;
+          border:none;
+          border-radius:0;
+          box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        input {
+
+        }
+        textarea {
+
+        }
+      }
+      .frm_submit {
+        input {
+          background:$pallet1;
+          border:none;
+          border-radius:0;
+          color:white;
+          padding:15px 30px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width:767px) {
+  .Contact_Us {
+    #contact {
+      margin:20px;
+      padding-left:0;
+      aside {display:none;}
+      form {
+        .frm_form_field {
+          input,textarea {
+          }
+          input {
+
+          }
+          textarea {
+
+          }
+        }
+        .frm_submit {
+          width:100%;
+          input {
+            width:100%;
+            display: block;
+            margin:0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width:450px) {
+  .Contact_Us {
+    .navbar {margin-bottom:0;}
+    .content{
+      padding:5px;
+    }
+    #contact {
+      margin:5px;
+      form {
+        .frm_form_field {
+          input,textarea {
+          }
+          input {
+
+          }
+          textarea {
+
+          }
+        }
+        .frm_submit {
+          input {
+          }
+          img {
+            display:none;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,10 +1,10 @@
-<!-- 
-	.___            .___              
-	|   | ____    __| _/____   ____   
-	|   |/    \  / __ |/ __ \_/ __ \  
-	|   |   |  \/ /_/ \  ___/\  ___/  
-	|___|___|  /\____ |\___  >\___  > 
-	         \/      \/    \/     \/  
+<!--
+	.___            .___
+	|   | ____    __| _/____   ____
+	|   |/    \  / __ |/ __ \_/ __ \
+	|   |   |  \/ /_/ \  ___/\  ___/
+	|___|___|  /\____ |\___  >\___  >
+	         \/      \/    \/     \/
 	------- Creative Disruption ------
 
 	http://indee.io
@@ -29,8 +29,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
 
 		<title><?php title() ?></title>
-		
+
 		<?php wp_head(); ?>
 	</head>
 
-	<body>
+	<?php // Take Page title and replace spaces with _'s ?>
+	<?php $class = str_replace(' ', '_', get_the_title());?>
+	<?php // give the body a class that = the page name ?>
+	<body class="<?php echo $class ?>">
