@@ -7,8 +7,13 @@
 .hero-link {
   background:$pallet1;
   color:white!important;
-  bordeR:none;
+  border:none;
   border-radius:0;
+  transition:all 0.3s;
+  &:hover {
+    background:white!important;
+    color:$pallet1!important;
+  }
 }
 
 .content {
@@ -35,5 +40,5 @@
 
 
 form {
-  
+
 }
