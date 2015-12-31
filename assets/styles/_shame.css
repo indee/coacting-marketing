@@ -118,7 +118,7 @@
     right: 20px;
   }
   &-face {
-    background:#f9f9f9;
+    background:rgba(249,249,249, 0.99);
     padding:30px 10px 10px 30px;
     border-left:#eee 1px solid;
     border-top:#eee 1px solid;
