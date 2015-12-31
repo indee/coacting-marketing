@@ -244,13 +244,14 @@
           font-weight:900;
           padding:30px 10px;
           line-height:0.9;
-          text-align:center;
+          text-align:left;
           left:-80px;
         }
       }
     }
     form {
       padding:30px;
+      padding-top:0;
       .frm_form_field {
         width:100%;
         border:none;
@@ -260,6 +261,8 @@
           height:auto;
           border:none;
           border-radius:0;
+          width:100%;
+          margin:10px 0;
           box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.1);
         }
         input {
@@ -275,7 +278,10 @@
           border:none;
           border-radius:0;
           color:white;
-          padding:15px 30px;
+          padding: 15px 80px;
+          position: relative;
+          left: -5px;
+          top: 5px;
         }
       }
     }
