@@ -6,11 +6,11 @@ RUN mkdir ${THEME_NAME}
 WORKDIR /app/wp-content/themes/${THEME_NAME}
 
 # Add Install node modules and bower components
-ADD package.json ./
+COPY package.json ./
 RUN npm install
 
 # Add theme files
-ADD . .
+COPY . .
 
 # Build
 RUN gulp build \

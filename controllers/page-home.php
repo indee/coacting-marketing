@@ -3,7 +3,6 @@
 		Template Name: Home Template
 	*/
 
-
 	// Get the header content
 	get_header();
 	// Set Contect to pass into the view

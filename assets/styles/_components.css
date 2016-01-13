@@ -26,8 +26,9 @@ header#header {
 
 
 .card {
-  text-align:center;
+  text-align:left;
   margin:50px 0;
+  padding-left:90px;
   &-stat {
     height:150px;
     width:150px;
@@ -44,9 +45,32 @@ header#header {
   i {
     font-size:5rem;
     margin-bottom:15px;
+    position: absolute;
+    left:0;
     color:$pallet1;
   }
   p {margin:0;}
+
+  &-theme1 {
+    i {
+      color:$pallet5;
+    }
+  }
+  &-theme2 {
+    i {
+      color:$pallet2;
+    }
+  }
+  &-theme3 {
+    i {
+      color:$pallet3;
+    }
+  }
+  &-theme4 {
+    i {
+      color:$pallet4;
+    }
+  }
 }
 
 
