@@ -78,9 +78,10 @@ gulp.task('deploy', function () {
 	  	'!./readme.md'
 	  ])
 		.pipe(sftp({
-			host: String(process.env.FTP_HOST),
-	    user: String(process.env.FTP_USER),
-	    pass: String(process.env.FTP_PASSWORD),
+			host:process.env.FTP_HOST,
+	    user:process.env.FTP_USER,
+	    pass:process.env.FTP_PASSWORD,
+	    remotePath:process.env.FTP_DIR
 		}));
 });
 
