@@ -25,15 +25,15 @@ const paths = { // Set second level paths
 };
 
 gulp.task('scripts', function () {
-	return gulp.src(paths.app.scripts + '/*.js')
+	return gulp.src(paths.app.javascripts + '/*.js')
 		.pipe(concat('frontend.js'))
-		.pipe(gulp.dest(paths.dist.scripts))
+		.pipe(gulp.dest(paths.dist.javascripts))
 		.pipe(livereload());
 });
 
 gulp.task('standalone-scripts', function () {
-	return gulp.src(paths.app.scripts + '/standalone/*.js')
-		.pipe(gulp.dest(paths.dist.scripts))
+	return gulp.src(paths.app.javascripts + '/standalone/*.js')
+		.pipe(gulp.dest(paths.dist.javascripts))
 		.pipe(livereload());
 });
 
@@ -92,8 +92,8 @@ gulp.task('watch', function () {
 	livereload.listen();
 	gulp.watch(paths.app.styles + '/**/*.css', [ 'styles' ]);
 	gulp.watch(paths.app.fonts + '/*', [ 'fonts' ]);
-	gulp.watch(paths.app.scripts + '/*.js', [ 'scripts' ]);
-	gulp.watch(paths.app.scripts + '/standalone/*.js', [ 'standalone-scripts' ]);
+	gulp.watch(paths.app.javascripts + '/*.js', [ 'scripts' ]);
+	gulp.watch(paths.app.javascripts + '/standalone/*.js', [ 'standalone-scripts' ]);
 	gulp.watch(paths.app.images + '/*', [ 'images' ]);
 	gulp.watch(paths.app.videos + '/*', [ 'videos' ]);
 });
