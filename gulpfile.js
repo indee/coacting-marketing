@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const util = require('gulp-util');
 const sourcemap = require('gulp-sourcemaps');
-const ftp = require('vinyl-ftp');
+const sftp = require('gulp-sftp');
 const rename = require('gulp-rename');
 const concat = require('gulp-concat');
 const livereload = require('gulp-livereload');
@@ -64,16 +64,9 @@ gulp.task('images', function () {
 		.pipe(livereload());
 });
 
-gulp.task('deploy', function() {
-  var conn = ftp.create({
-    host: util.env.FTP_HOST,
-    user: util.env.FTP_USER,
-    password: util.env.FTP_PASSWORD,
-    log: util.log
-  });
-
-  return gulp
-  	.src([
+gulp.task('deploy', function () {
+	return gulp
+		.src([
 	  	'./**/*',
 
 	  	'!./assets',
@@ -84,8 +77,11 @@ gulp.task('deploy', function() {
 	  	'!./package.json',
 	  	'!./readme.md'
 	  ])
-    .pipe(conn.newer(util.env.FTP_DIR))
-    .pipe(conn.dest(util.env.FTP_DIR));
+		.pipe(sftp({
+			host: String(util.env.FTP_HOST),
+	    user: String(util.env.FTP_USER),
+	    pass: String(util.env.FTP_PASSWORD),
+		}));
 });
 
 gulp.task('watch', function () {
