@@ -4,3 +4,11 @@ node_js:
 before_script:
   - npm install -g gulp
 script: gulp build
+
+env:
+  global:
+    - "FTP_USER=user"
+    - "FTP_PASSWORD=password"
+    - "FTP_DIR=sftp://188.166.24.10//srv/users/coacting/apps/coacting/public/wp-content/themes/coacting"
+after_success:
+    "curl --ftp-create-dirs -T uploadfilename -u $FTP_USER:$FTP_PASSWORD ftp://sitename.com/directory/myfile"

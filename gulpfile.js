@@ -1,20 +1,44 @@
-// ------------------------------------------- //
-//           VARIABLES AND DEPENDANCIES
-// ------------------------------------------- //
-	// Node Packages
-var gulp = require('gulp');
+const gulp = require('gulp');
+const util = require('gulp-util');
+const sourcemap = require('gulp-sourcemaps');
+const ftp = require('vinyl-ftp');
+const rename = require('gulp-rename');
+const concat = require('gulp-concat');
+const livereload = require('gulp-livereload');
 
-	// Gulp Packages
-// var util = require('gulp-util');
-var sourcemap = require('gulp-sourcemaps');
-var rename = require('gulp-rename');
-var concat = require('gulp-concat');
-var livereload = require('gulp-livereload');
+// PATHING
+const paths = { // Set second level paths
+  globals: { // Global Pathing
+    dev: './assets', // Working Directory
+    prod: './dist', // Compiled Code
+  },
+  app: { // Paths for preprocessed assets
+    get styles () {return paths.globals.dev + '/stylesheets'},
+		get images () {return paths.globals.dev + '/images'},
+    get javascripts () {return paths.globals.dev + '/javascripts'}
+  },
+  dist: { // Paths for processed assets
+		get styles () {return paths.globals.prod + '/css'},
+    get javascripts () {return paths.globals.prod + '/js'},
+    get images () {return paths.globals.prod + '/img'}
+  }
+};
 
-// Post CSS Awesomeness
-var postCSS = require('gulp-postcss');
+gulp.task('scripts', function () {
+	return gulp.src(paths.app.scripts + '/*.js')
+		.pipe(concat('frontend.js'))
+		.pipe(gulp.dest(paths.dist.scripts))
+		.pipe(livereload());
+});
 
-var css_proc = [
+gulp.task('standalone-scripts', function () {
+	return gulp.src(paths.app.scripts + '/standalone/*.js')
+		.pipe(gulp.dest(paths.dist.scripts))
+		.pipe(livereload());
+});
+
+const postCSS = require('gulp-postcss');
+const css_proc = [
 	require('precss'),
 	require('postcss-write-svg'),
 	require('rucksack-css'),
@@ -24,66 +48,6 @@ var css_proc = [
 	require('postcss-color-function'),
 	require('lost')
 ];
-
-// ------------------------------------------- //
-//                    PATHING
-// ------------------------------------------- //
-// Global Pathing
-var globals = {
-	// Working Directory
-	dev: 'assets',
-	// Compiled Code
-	prod: 'dist'
-};
-
-// Set second level paths
-var paths = {
-	// Paths for preprocessed assets
-	app: {
-		'scripts': globals.dev + '/scripts',
-		'styles': globals.dev + '/styles',
-		'images': globals.dev + '/images',
-		'fonts': globals.dev + '/fonts',
-		'videos': globals.dev + '/videos'
-	},
-
-	// Paths for processed assets
-	dist: {
-		'scripts': globals.prod + '/js',
-		'styles': globals.prod + '/css',
-		'images': globals.prod + '/img',
-		'fonts': globals.prod + '/fonts',
-		'videos': globals.prod + '/videos'
-	}
-};
-
-// ------------------------------------------- //
-//                  GULP TASKS
-// ------------------------------------------- //
-// Scripts Task
-gulp.task('scripts', function () {
-	// Find Scripts source
-	return gulp.src(paths.app.scripts + '/*.js')
-		// Concat all scripts into one
-		.pipe(concat('frontend.js'))
-		// Create frontend.js
-		.pipe(gulp.dest(paths.dist.scripts))
-		// Reload Page
-		.pipe(livereload());
-});
-
-// Scripts Task
-gulp.task('standalone-scripts', function () {
-	// Find Scripts source
-	return gulp.src(paths.app.scripts + '/standalone/*.js')
-		// Concat all scripts into one
-		// Create frontend.js
-		.pipe(gulp.dest(paths.dist.scripts))
-		// Reload Page
-		.pipe(livereload());
-});
-
-// Styles Task
 gulp.task('styles', function () {
 	gulp.src(paths.app.styles + '/index.css')
 	.pipe(sourcemap.init())
@@ -94,65 +58,51 @@ gulp.task('styles', function () {
 	.pipe(livereload());
 });
 
-// Fonts Task
-gulp.task('fonts', function () {
-	// Find Fonts source
-	return gulp.src(paths.app.fonts + '/*')
-		// Copy font to dist
-		.pipe(gulp.dest(paths.dist.fonts))
-		// Reload Page
-		.pipe(livereload());
-});
-
-// Video Task
-gulp.task('videos', function () {
-	// Find Videos source
-	return gulp.src(paths.app.videos + '/*')
-		// Copy Video to dist
-		.pipe(gulp.dest(paths.dist.videos))
-		// Reload Page
-		.pipe(livereload());
-});
-
-// Image Task
 gulp.task('images', function () {
 	return gulp.src(paths.app.images + '/**/*')
 		.pipe(gulp.dest(paths.dist.images))
-		// Reload Page
 		.pipe(livereload());
 });
 
-// ------------------------------------------- //
-//                  GULP WATCHING
-// ------------------------------------------- //
+gulp.task('deploy', function() {
+  var conn = ftp.create({
+    host: util.env.FTP_HOST,
+    user: util.env.FTP_USER,
+    password: util.env.FTP_PASSWORD,
+    log: util.log
+  });
+
+  return gulp
+  	.src([
+	  	'./**/*',
+
+	  	'!./assets',
+	  	'!./node_modules',
+	  	'!./.gitignore',
+	  	'!./.travis.yml',
+	  	'!./gulpfile.js',
+	  	'!./package.json',
+	  	'!./readme.md'
+	  ])
+    .pipe(conn.newer(util.env.FTP_DIR))
+    .pipe(conn.dest(util.env.FTP_DIR));
+});
+
 gulp.task('watch', function () {
-	// Start livereload server
 	livereload.listen();
-	// Watch Styles
 	gulp.watch(paths.app.styles + '/**/*.css', [ 'styles' ]);
-	// Watch Fonts
 	gulp.watch(paths.app.fonts + '/*', [ 'fonts' ]);
-	// Watch Scripts
 	gulp.watch(paths.app.scripts + '/*.js', [ 'scripts' ]);
-	// Watch Standalone Scripts
 	gulp.watch(paths.app.scripts + '/standalone/*.js', [ 'standalone-scripts' ]);
-	// Watch Images
 	gulp.watch(paths.app.images + '/*', [ 'images' ]);
-	// Watch Videos
 	gulp.watch(paths.app.videos + '/*', [ 'videos' ]);
 });
 
-// ------------------------------------------- //
-//           GULP TASK REGISTRATION
-// ------------------------------------------- //
-
 gulp.task('build', [
 	'styles',
-	'fonts',
 	'scripts',
 	'standalone-scripts',
 	'images',
-	'videos'
 ]);
 
 gulp.task('default', [

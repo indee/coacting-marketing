@@ -6,17 +6,18 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "gulp-livereload": "^3.8.0",
     "beeper": "^1.0.0",
     "cssnano": "^3.2.0",
     "font-awesome": "^4.4.0",
     "gulp": "^3.8.11",
     "gulp-concat": "^2.4.3",
+    "gulp-livereload": "^3.8.0",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^0.6.6",
     "gulp-postcss": "^6.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^1.6.0",
+    "gulp-util": "^3.0.7",
     "holderjs": "^1.7.0",
     "jquery": "^2.1.4",
     "lost": "^6.6.2",
@@ -25,6 +26,7 @@
     "postcss-color-function": "^2.0.0",
     "postcss-write-svg": "^1.1.2",
     "precss": "^1.2.3",
-    "rucksack-css": "^0.8.2"
+    "rucksack-css": "^0.8.2",
+    "vinyl-ftp": "^0.4.5"
   }
 }
