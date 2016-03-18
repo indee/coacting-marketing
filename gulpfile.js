@@ -68,6 +68,7 @@ gulp.task('sftp', function () {
 	return gulp
 		.src([
 	  	'./**/*',
+	  	'!./assets/**/*',
 	  	'!./node_modules/**',
 	  	'!./.gitignore',
 	  	'!./.travis.yml',
