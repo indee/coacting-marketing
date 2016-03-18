@@ -64,7 +64,7 @@ gulp.task('images', function () {
 		.pipe(livereload());
 });
 
-gulp.task('deploy', function () {
+gulp.task('sftp', function () {
 	return gulp
 		.src([
 	  	'./**/*',
@@ -94,11 +94,17 @@ gulp.task('watch', function () {
 	gulp.watch(paths.app.videos + '/*', [ 'videos' ]);
 });
 
+
 gulp.task('build', [
 	'styles',
 	'scripts',
 	'standalone-scripts',
 	'images',
+]);
+
+gulp.task('deploy', [
+	'build',
+	'sftp'
 ]);
 
 gulp.task('default', [
