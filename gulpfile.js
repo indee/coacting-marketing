@@ -69,7 +69,7 @@ gulp.task('deploy', function () {
 		.src([
 	  	'./**/*',
 	  	'!./assets',
-	  	'!./node_modules',
+	  	'!./node_modules/**',
 	  	'!./.gitignore',
 	  	'!./.travis.yml',
 	  	'!./gulpfile.js',
