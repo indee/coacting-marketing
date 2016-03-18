@@ -68,7 +68,7 @@ gulp.task('deploy', function () {
 	return gulp
 		.src([
 	  	'./**/*',
-	  	'!./assets',
+	  	'!./assets/**/*',
 	  	'!./node_modules/**',
 	  	'!./.gitignore',
 	  	'!./.travis.yml',
