@@ -64,7 +64,7 @@ gulp.task('images', function () {
 		.pipe(livereload());
 });
 
-gulp.task('sftp', function () {
+gulp.task('deploy', function () {
 	return gulp
 		.src([
 	  	'./**/*',
@@ -100,11 +100,6 @@ gulp.task('build', [
 	'scripts',
 	'standalone-scripts',
 	'images',
-]);
-
-gulp.task('deploy', [
-	'build',
-	'sftp'
 ]);
 
 gulp.task('default', [
